@@ -27,9 +27,9 @@ for test_case in range(1, T + 1):
         mn = float('inf')
         mx = -float('inf')
         for i in range(N) :
-            if mn > arr[i] > last_min:
+            if mn > arr[i] >= last_min:
                 mn = arr[i]
-            if mx < arr[i] < last_max :
+            if mx < arr[i] <= last_max :
                 mx = arr[i]
         # print(arr.index(mx))
         last_min = mn
