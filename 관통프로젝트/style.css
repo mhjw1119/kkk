@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; /* flex-wrap 속성 추가 */
+}
+
+.profile-section {
+    width: 350px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.self-introduction textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.self-introduction button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tendency-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-preference, .investment-style, .interest-stocks {
+    margin-bottom: 20px;
+}
+
+.product-preference label, .investment-style label, .interest-stocks label {
+    margin-right: 10px;
+}
+
+#profile-upload {
+    display: none;
+}
+
+.user-info-section {
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-row label {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.info-row input[type="text"],
+.info-row input[type="email"],
+.info-row input[type="number"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.info-row button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.info-row.asset-salary input {
+    width: calc(50% - 5px);
+}
+
+.info-row.asset-salary input:first-child {
+    margin-right: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* 세로 방향으로 변경 */
+    }
+
+    .profile-section {
+        width: 100%; /* 전체 너비 사용 */
+        border-right: none; /* 구분선 제거 */
+        border-bottom: 1px solid #ddd; /* 아래쪽에 구분선 추가 */
+    }
+
+    .tendency-section {
+        width: 100%; /* 전체 너비 사용 */
+    }
+}

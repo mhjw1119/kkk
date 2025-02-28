@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    min-height: 100vh; /* 화면 높이만큼 최소 높이 설정 */
+}
+
+.container {
+    width: 80%;
+    max-width: 600px; /* 최대 너비 조정 */
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* 내용 중앙 정렬 */
+}
+
+.portfolio-section {
+    padding: 20px;
+    width: 100%; /* portfolio-section의 너비를 container에 맞춤 */
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 내용 중앙 정렬 */
+    margin-bottom: 10px;
+    width: 100%; /* info-row의 너비를 portfolio-section에 맞춤 */
+}
+
+.info-row label {
+    width: 100px; /* 레이블 너비 고정 */
+    text-align: right; /* 레이블 텍스트 오른쪽 정렬 */
+    margin-right: 10px;
+}
+
+.info-row input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.info-row button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label {
+    margin-right: 15px;
+}

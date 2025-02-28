@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 정보 수정</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>기본 정보 수정</h1>
+        <div class="content">
+            <div class="profile-section">
+                <h2>프로필 사진</h2>
+                <div class="profile-image">
+                    <img id="profile-preview" src="임재범.jpg"프로필 사진">
+                </div>
+                <input type="file" id="profile-upload" accept="image/*">
+                <h2>자기 소개</h2>
+                <div class="self-introduction">
+                    <textarea>안녕하세요. 저는 부자가 되고 싶습니다.</textarea>
+                    <button>Update</button>
+                </div>
+            </div>
+            <div class="tendency-section">
+                <h2>투자 상품 선호도</h2>
+                <div class="product-preference">
+                    <input type="checkbox" id="stock" name="product" value="stock" checked><label for="stock">주식</label>
+                    <input type="checkbox" id="bond" name="product" value="bond" checked><label for="bond">채권</label>
+                    <input type="checkbox" id="real-estate" name="product" value="real-estate"><label for="real-estate">부동산</label>
+                    <input type="checkbox" id="crypto" name="product" value="crypto"><label for="crypto">가상 화폐</label>
+                </div>
+                <h2>투자 스타일</h2>
+                <div class="investment-style">
+                    <input type="radio" id="conservative" name="style" value="conservative"><label for="conservative">안정적</label>
+                    <input type="radio" id="neutral" name="style" value="neutral"><label for="neutral">중립적</label>
+                    <input type="radio" id="aggressive" name="style" value="aggressive" checked><label for="aggressive">공격적</label>
+                </div>
+                <h2>관심 종목</h2>
+                <div class="interest-stocks">
+                    <input type="checkbox" id="it" name="stock" value="it"><label for="it">정보기술</label>
+                    <input type="checkbox" id="consumer" name="stock" value="consumer" checked><label for="consumer">소비재</label>
+                    <input type="checkbox" id="finance" name="stock" value="finance" checked><label for="finance">금융</label>
+                </div>
+            </div>
+        </div>
+        <div class="user-info-section">
+            <h2>회원 정보 입력</h2>
+            <div class="info-row">
+                <label>회원 번호</label>
+                <input type="text" value="1" disabled>
+            </div>
+            <div class="info-row">
+                <label>ID</label>
+                <input type="text" value="user123" disabled>
+            </div>
+            <div class="info-row">
+                <label>Email</label>
+                <input type="email" value="user@example.com">
+                <button>Update</button>
+            </div>
+            <div class="info-row">
+                <label>Nickname</label>
+                <input type="text" placeholder="닉네임을 설정해주세요.">
+                <button>Update</button>
+            </div>
+            <div class="info-row">
+                <label>나이</label>
+                <input type="number" placeholder="나이를 설정해주세요.">
+                <button>Update</button>
+            </div>
+            <div class="info-row asset-salary">
+                <label>자산과 연봉</label>
+                <input type="number" placeholder="현재 자산을 입력해주세요.">
+                <input type="number" placeholder="연봉을 입력해주세요.">
+                <button>Update</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

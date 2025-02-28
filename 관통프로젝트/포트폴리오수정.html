@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 수정</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>포트폴리오 수정</h2>
+
+        <div class="content">
+
+            <div class="portfolio-section">
+                <div class="info-row">
+                    <label>회원 번호</label>
+                    <input type="text" value="1" disabled>
+                </div>
+                <div class="info-row">
+                    <label>ID</label>
+                    <input type="text" value="user123" disabled>
+                </div>
+                <div class="info-row">
+                    <label>저축 성향</label>
+                    <div class="radio-group">
+                        <input type="radio" id="challenge" name="saving" value="challenge">
+                        <label for="challenge">도전형</label>
+                        <input type="radio" id="thrifty" name="saving" value="thrifty" checked>
+                        <label for="thrifty">검소형</label>
+                        <input type="radio" id="average" name="saving" value="average">
+                        <label for="average">일반형</label>
+                    </div>
+                    <button>Update</button>
+                </div>
+                <div class="info-row">
+                    <label>최애 은행</label>
+                    <input type="text" placeholder="가장 좋아하는 은행을 입력해주세요.">
+                    <button>Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
