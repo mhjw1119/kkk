@@ -17,7 +17,7 @@ def dfs ( depth, sel):
     #     return
 
     sel[depth] = 0
-    dfs(depth+1, sel)
+    dfs(depth7676+1, sel)
 
     sel[depth] = 1
     dfs(depth+1, sel)
