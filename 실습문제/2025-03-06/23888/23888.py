@@ -1,5 +1,5 @@
 import  sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open('input.txt', 'r')
 
 def two( N , count, back, log ) :
     if N == len(arr1) :
