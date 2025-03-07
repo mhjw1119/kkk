@@ -15,38 +15,10 @@ def hex_to_bin( hx ) :
 
 def two( arr1 ) :
     cnt = 0
-    arr1_cnt_result = []
     result = []
-    arr1_str = ''
-    arr1_cnt = 0
-    arr1_r = 0
-    code = ['3211','2221', '2122','1411','1132','1231','1114','1312','1213','3112']
-    for _ in range(8) :
-        for f in range(4) :
-            arr1_cnt = 0
-            while 1:
-
-                if sum(arr1_cnt_result) + arr1_cnt >= 7 :
-                    break
-                arr1_cnt += 1
-                if arr1[arr1_r] != arr1[arr1_r + 1] :
-                    break
-
-                arr1_r += 1
-            arr1_cnt_result.append(int(arr1_cnt / low_cnt))
-        for p in arr1_cnt_result :
-            arr1_str = arr1_str + str(p)
-        if arr1_str not in code :
-            return
-        for ch in range(8) :
-            result.append(code.index(arr1_str))
-    return result
-
-
-
-
+    code = ['0001101','0011001', '0010011','0111101','0100011','0110001','0101111','0111011','0110111','0001011']
     for k in range(8):
-        if arr1[ k*7*cnt:(k*7)+7 ] not in code :
+        if arr1[ k*7:(k*7)+7 ] not in code :
             return 0
         result.append(code.index(arr1[ k*7:(k*7)+7 ]))
 
@@ -90,31 +62,24 @@ for testcase in range(1, T+ 1):
     line = 0
     end = 0
     sum_bin = 0
-    low_cnt = 1
     for i in range(len(bin_arr)) :
         start = bin_arr[i].index('1')
 
         for i2 in range(M-1,0,-1) :
             if bin_arr[i][i2] == '1':
                 end = i2
-                break                                         # 시작점 마지막 찾기
-        low_check = end - start
-        while low_check > 0 :
-            low_check //= 2
-            low_cnt += 1
-
-        low = (55 * low_cnt)- (end - start)
+                break
+        low = 55 - (end - start)                                            # 시작점 마지막 찾기
 
         if low != 0 :
-            for i3 in range(7*low_cnt) :
-                if 0 <= start -i3:
-                    backup = bin_arr[i][start-i3:start + 55*low_cnt]
-                    real_result = two(backup)
-                    if real_result != 0 :
-                        real_result  = check(real_result)
-                        sum_bin += real_result
-                    if real_result != 0:
-                        break
+            for i3 in range(low+1) :
+                backup = bin_arr[i][start-i3:-1]
+                real_result = two(backup)
+                if real_result != 0 :
+                    real_result  = check(real_result)
+                    sum_bin += real_result
+                if real_result != 0:
+                    break
 
         else:
             backup = bin_arr[i][start:end+2]
@@ -122,11 +87,3 @@ for testcase in range(1, T+ 1):
             sum_bin += real_result
 
     print(f'#{testcase} {sum_bin}')
-
-
-
-
-
-
-
-
