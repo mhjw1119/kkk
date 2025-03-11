@@ -2,22 +2,7 @@ import sys
 sys.stdin = open('input.txt','r')
 
 def search (y,x) :
-    part_result = 0
-    count = 0
-    if arr[y][x] == 1 :
-        part_result = M
-    for k in range(1,N+1) :
-        if -1 < y- k and y + k < N and -1 < x - k and x + k < N :
-            for ny in range( y - k,y +k) :
-                for nx in range(x - k, x + k) :
-                    if arr[ny][nx] == 1:
-                        part_result += M
-                        count += 1
-        if k * k + (k - 1) * (k - 1) < part_result :
-            return count
-
-        else:
-            return 0
+    for i in r
 
 
 T = int(input())
