@@ -1,59 +1,36 @@
 import sys
+from collections import deque
+
 sys.stdin = open( 'input.txt', 'r')
 
-def check( num, cnt ) :
-    global result
-    back = 0
-    if num == M :
-        if cnt < result :
-            result = cnt
-        return
-    if result <= cnt or num < 0:
-        back = -1
-        return
+def check(  N, M ) :
+    check_result = []
+    visit = set([N])
+    back = deque([(N,0)])
+    while back :
+        num, cnt = back.popleft()
+        if num > 1000000 :
+            return
+        if num == M and num <= 1000000:
+            return
+        for i in [num*2,num - 10, num + 1,num - 1] :
+            if 1<= i <= 1000000 and i not in visit :
 
-    if 0 > num :
-        back = -1
-        return
+                if i == M :
+                    return cnt + 1
 
-    for i in range(4) :
-        if num < M :
+                back.append((i, cnt + 1))
+                visit.add(i)
+                # back.append((i, cnt + 1))
+                # visit.add(i)
 
-            if i == 0 :
-                back = check( num * 2 , cnt+1)
-                if back == -1 :
-                    return
-                # check(num - 1, cnt+1)
-            if i == 1 :
-                # check( num  - 10, cnt+1)
-                check(num+1, cnt+1)
-                if back == -1 :
-                    return
-
-        else:
-            if i == 2 :
-                check( num  - 10, cnt+1)
-                if back == -1 :
-                    return
-                # check(num+1, cnt+1)
-
-            if i == 3 :
-                # check( num * 2 , cnt+1)
-
-                check(num - 1, cnt+1)
-                if back == -1 :
-                    return
-
-
-
-
+    # cnt += 1
+    # check(back)
 
 T = int(input())
 
 
 for tc in range( 1, T + 1 ):
     N, M = map(int, input().split())
-    result = 10000000000000000000000
-    check(N, 0)
-
+    result = check(N, M)
     print(f'#{tc} {result}')
